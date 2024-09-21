@@ -16,13 +16,16 @@ class ContasCadastradas extends StatelessWidget {
           itemCount: contas.length,
           itemBuilder: (BuildContext context, int index) {
             final conta = contas[index];
-            return ListTile(
+            return Card(
+              margin: const EdgeInsets.all(16.0),
+              color: Colors.black12,
+              child: ListTile(
               title: Text(conta.titular),
               subtitle: Text(
                   'Agência: ${conta.agencia}  -  Número da conta: ${conta.numeroConta}'),
               trailing: Text('Saldo: R\$ ${conta.saldo}'),
-            );
-          }),
-    );
+            ));
+          },
+    ));
   }
 }
